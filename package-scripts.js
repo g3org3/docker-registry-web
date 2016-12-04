@@ -12,7 +12,7 @@ module.exports = {
     docker: {
       build: {
         pre: 'python pkg.py',
-        all: 'nps d.b.pre && nps d.b.l && nps d.b.v',
+        all: 'nps d.b.l && nps d.b.v',
         latest: `nps d.b.pre && docker build -f docker/Dockerfile -t ${image}:latest . `,
         version: `nps d.b.pre && docker build -f docker/Dockerfile -t ${image}:${version} . `
       },
