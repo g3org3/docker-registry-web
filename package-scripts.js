@@ -7,13 +7,14 @@ const image = `${registry}/${name}`
 module.exports = {
   scripts: {
     default: 'node lib/index.js',
-    test: 'mocha',
+    test: 'mocha -t 5000',
     lint: 'standard --verbose | snazzy',
     docker: {
       build: {
-        all: 'nps d.b.l && nps d.b.v',
-        latest: `docker build -f docker/Dockerfile -t ${image}:latest . `,
-        version: `docker build -f docker/Dockerfile -t ${image}:${version} . `
+        pre: 'python pkg.py',
+        all: 'nps d.b.pre && nps d.b.l && nps d.b.v',
+        latest: `nps d.b.pre && docker build -f docker/Dockerfile -t ${image}:latest . `,
+        version: `nps d.b.pre && docker build -f docker/Dockerfile -t ${image}:${version} . `
       },
       push: {
         all: 'nps d.p.l && nps d.p.v',
@@ -26,8 +27,9 @@ module.exports = {
         change: `docker tag ${image}:rollback ${image}:latest`
       }
     },
-    deploy: "ansible-playbook -v deploy/update.yml",
-    rollback: "nps d.r.c && nps de",
-    full: "nps d.b.a && nps d.p.a && nps de"
+    dev: 'nps d.b.l && nps d.r',
+    deploy: 'ansible-playbook -v deploy/update.yml',
+    rollback: 'nps d.r.c && nps de',
+    full: 'nps d.b.a && nps d.p.a && nps de'
   }
-};
+}
