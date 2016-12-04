@@ -29,7 +29,7 @@ module.exports = {
     },
     dev: 'nps d.b.l && nps d.r',
     deploy: 'ansible-playbook -v deploy/update.yml',
-    rollback: 'nps d.r.c && nps de',
-    full: 'nps d.b.a && nps d.p.a && nps de'
+    rollback: 'nps d.r.c && nps deploy',
+    full: 'nps d.b.a && nps d.p.a && nps deploy'
   }
 }
