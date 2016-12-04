@@ -26,4 +26,4 @@ block content
         span Docker Pull Command
         a.glyphicon.glyphicon-copy(style='float:right;' href="#")
       .panel-body
-        pre= "docker pull registry.jorgeadolfo.com/"+image
+        pre= "docker pull registry.jorgeadolfo.com/"+image+":"+tags[tags.length-1]
