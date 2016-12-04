@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h2 Oh snap!
+
+  if err
+    pre= err
+
+  .alert.alert-danger
+    p Something didn't work as expected!

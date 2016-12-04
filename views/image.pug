@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  ol.breadcrumb
+    li
+      a(href="/") Home
+    li
+      a(href="/") Images
+    li.active
+      a(href="#")= image
+  center
+    h2= image+" "
+      small :tags
+  hr
+  .col-sm-6
+    .panel.panel-default
+      .panel-heading Tags
+      .panel-body
+        .list-group
+          each tag in tags
+            .list-group-item= tag
+
+  .col-sm-6
+    .panel.panel-default
+      .panel-heading
+        span Docker Pull Command
+        a.glyphicon.glyphicon-copy(style='float:right;' href="#")
+      .panel-body
+        pre= "docker pull registry.jorgeadolfo.com/"+image

@@ -7,6 +7,7 @@ module.exports = {
   scripts: {
     default: 'node lib/index.js',
     test: 'mocha',
+    lint: 'standard --verbose | snazzy',
     docker: {
       build: `docker build -f docker/Dockerfile -t ${registry}/${name}:${tag} . `,
       push: `docker push ${registry}/${name}:${tag}`,

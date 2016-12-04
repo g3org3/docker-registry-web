@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  ol.breadcrumb
+    li
+      a(href="#") Home
+    li.active
+      a(href="#") Images
+  center
+    h1 Available Images
+  hr
+  .col-sm-8.col-sm-offset-2
+    .list-group
+      each image in images
+        a.list-group-item(href='/image/'+image)= image
