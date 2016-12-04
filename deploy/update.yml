@@ -1,0 +1,17 @@
+---
+- hosts: web
+  remote_user: root
+  tasks:
+    - name: Pull new image
+      shell: docker pull registry.jorgeadolfo.com/webpage:latest
+      # docker_image:
+      #   name: registry.jorgeadolfo.com/webpage
+      #   tag: latest
+
+    - name: Stop Webpage
+      shell: cd /var/docker/webpage && docker-compose stop && docker-compose rm -f
+      ignore_errors: yes
+
+    - name: Start Webpage
+      shell: cd /var/docker/webpage && docker-compose up -d
+      ignore_errors: yes
