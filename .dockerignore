@@ -3,4 +3,5 @@ node_modules
 test
 *.md
 *.log
-deploy/*.retry
+deploy
+package-scripts.js

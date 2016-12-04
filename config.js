@@ -1,3 +1,0 @@
-module.export = {
-  name: 'webpage'
-}
