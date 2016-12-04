@@ -23,7 +23,7 @@ module.exports = {
       },
       run: `docker run -it --rm -p 3003:3003 --name test-${name} ${image}:latest`,
       rollback: {
-        set: `docker tag ${image}:${version} ${image}:rollback`,
+        set: `docker tag ${image}:${version} ${image}:rollback && docker push ${image}:rollback`,
         change: `docker tag ${image}:rollback ${image}:latest`
       }
     },
