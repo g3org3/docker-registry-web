@@ -8,10 +8,11 @@ module.exports = {
     default: 'node lib/index.js',
     test: 'mocha',
     docker: {
-      build: `docker build -t ${registry}/${name}:${tag} . -f docker/Dockerfile`,
+      build: `docker build -f docker/Dockerfile -t ${registry}/${name}:${tag} . `,
       push: `docker push ${registry}/${name}:${tag}`,
       run: `docker run -it --rm -p 3000:3003 --name test-${name} ${registry}/${name}:${tag}`
     },
-    deploy: "ansible-playbook -v deploy/update.yml"
+    deploy: "ansible-playbook -v deploy/update.yml",
+    full: "nps d.b && nps d.p && nps de"
   }
 };

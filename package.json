@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "start": "nps",
+    "start": "node lib/index.js",
     "test": "nps test"
   },
   "author": "George <7jagjag@gmail.com>",
