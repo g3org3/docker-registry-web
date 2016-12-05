@@ -1,6 +1,6 @@
 {
   "name": "webpage",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "personal registry webpage to view available images",
   "main": "lib/index.js",
   "scripts": {
