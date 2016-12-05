@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node lib/index.js",
     "test": "nps test",
-    "lint": "standard --verbose | snazzy"
+    "lint": "standard --verbose | snazzy",
+    "nps": "nps"
   },
   "author": "George <7jagjag@gmail.com>",
   "license": "MIT",
