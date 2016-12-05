@@ -1,12 +1,13 @@
 {
   "name": "webpage",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "personal registry webpage to view available images",
   "main": "lib/index.js",
   "scripts": {
     "start": "node lib/index.js",
     "test": "nps test",
-    "lint": "standard --verbose | snazzy"
+    "lint": "standard --verbose | snazzy",
+    "nps": "nps"
   },
   "author": "George <7jagjag@gmail.com>",
   "license": "MIT",
