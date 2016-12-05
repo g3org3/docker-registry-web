@@ -13,7 +13,7 @@ describe('webpage', () => {
   })
 
   describe('GET /version', () => {
-    it('should display webpage verison', done => {
+    it('should display webpage version', done => {
       request(app)
       .get('/version')
       .expect(200, { version: version }, done)
