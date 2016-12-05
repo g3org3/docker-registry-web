@@ -1,15 +1,7 @@
-
-var assert = require('assert')
+/* global describe it */
 var app = require('../lib/server')
 var request = require('supertest')
-var server = null
-var chalk = require('chalk')
 var version = require('../package').version
-
-var log = {
-  default: str => console.log(chalk.dim.magenta(str)),
-  warning: str => console.log(chalk.dim.red(str))
-}
 
 describe('webpage', () => {
   describe('GET /', () => {
