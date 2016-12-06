@@ -11,6 +11,12 @@
   },
   "author": "George <7jagjag@gmail.com>",
   "license": "MIT",
+  "nyc": {
+    "include": [
+      "lib",
+      "helper"
+    ]
+  },
   "dependencies": {
     "axios": "~0.15.3",
     "dotenv": "~2.0.0",
