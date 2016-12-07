@@ -6,9 +6,14 @@ html(lang="en")
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='stylesheet', href='//bootswatch.com/united/bootstrap.min.css')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.slim.min.js")
+    script(src="//getbootstrap.com/dist/js/bootstrap.min.js")
   body
     .navbar.navbar-inverse.navbar-static-top
       .container
         a.navbar-brand(href='/') Registry
     .container
       block content
+
+    block scripts
