@@ -2,3 +2,4 @@ node_modules
 *.log
 .env
 deploy/*.retry
+.nyc_output

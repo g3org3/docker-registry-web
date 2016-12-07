@@ -1,5 +1,16 @@
 extends layout
 
+block scripts
+  script.
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip({ tigger: 'manual' })
+
+    })
+    var copyBtn = new Clipboard('.btn-cp');
+    copyBtn.on('success', function () {
+      $('[data-toggle="tooltip"]').tooltip('show')
+    })
+
 block content
   ol.breadcrumb
     li
@@ -24,6 +35,13 @@ block content
     .panel.panel-default
       .panel-heading
         span Docker Pull Command
-        a.glyphicon.glyphicon-copy(style='float:right;' href="#")
+        a.glyphicon.glyphicon-copy.btn-cp(data-toggle="tooltip" data-placement="top" title="copied!" style='float:right;' href="#" data-clipboard-target="#pull-cmd")
       .panel-body
-        pre= "docker pull registry.jorgeadolfo.com/"+image+":"+tags[tags.length-1]
+        pre#pull-cmd= "docker pull registry.jorgeadolfo.com/"+image+":"+tags[tags.length-1]
+
+    .panel.panel-default
+      .panel-heading
+        span Repo
+        a.glyphicon.glyphicon-copy.btn-cp(data-toggle="tooltip" data-placement="top" title="copied!" style='float:right;' href="#" data-clipboard-target="#pull-cmd")
+      .panel-body
+        pre#pull-cmd= "docker pull registry.jorgeadolfo.com/"+image+":"+tags[tags.length-1]

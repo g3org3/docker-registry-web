@@ -7,7 +7,11 @@ const image = `${registry}/${name}`
 module.exports = {
   scripts: {
     default: 'node lib/index.js',
-    test: 'mocha -t 5000',
+    test: {
+      default: 'nps lint && nps t.m',
+      mocha: 'mocha -t 5000'
+    },
+    coverage: 'nyc nps t',
     lint: 'standard --verbose | snazzy',
     docker: {
       build: {
