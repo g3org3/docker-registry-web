@@ -1,6 +1,6 @@
 ---
 - hosts: web
-  remote_user: root
+  remote_user: george
   tasks:
     - name: Pull new image
       shell: docker pull registry.jorgeadolfo.com/webpage:latest
